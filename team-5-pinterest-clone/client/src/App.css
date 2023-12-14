@@ -122,7 +122,12 @@
       }
       
       .userOverlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: absolute;
+        color: white;
         top: 0;
         left: 0;
         width: 100%;
@@ -133,6 +138,7 @@
       
       .postCard:hover .userOverlay {
         opacity: 1; /* Make the userOverlay visible on hover */
+        background-color: #2323238b;
       }
       .postimg{
         width: 100%;
@@ -148,8 +154,8 @@
         margin-top: 10px;
       }
       .userimg {
-        width: 50px; /* Adjust as needed */
-        height: 50px; /* Adjust as needed */
+        width: 80px; /* Adjust as needed */
+        height: 80px; /* Adjust as needed */
         border-radius: 50%;
         object-fit: cover;
       }

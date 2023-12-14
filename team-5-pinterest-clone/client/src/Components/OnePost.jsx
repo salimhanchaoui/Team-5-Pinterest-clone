@@ -164,6 +164,7 @@ function OnePost(props) {
               className="btn-close"
               data-bs-dismiss="toast"
               aria-label="Close"
+              onClick={()=>props.set(false)}
             ></button>
           </div>
           <div className="toast-body">

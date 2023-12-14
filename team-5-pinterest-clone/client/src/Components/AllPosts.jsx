@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Users from "../data/usersDummy.js";
 import Post from "./Post.jsx";
 import OnePost from "./OnePost.jsx";
-function AllPosts(props) {
-  const [users, setUsers] = useState(Users);
+import { DataContext } from '../Context.js';
+
+function AllPosts() {
   const [details, setDetails] = useState(false);
+  const { data, oneP, setOnep } = useContext(DataContext);
   const handleDetails = (obj) => {
     setDetails((prevDetails) => !prevDetails);
-    props.set(obj);
+    setOnep(obj);
   };
   return (
     <div>
-      {details && <OnePost  one={props.one}/>}
+      {details && <OnePost  one={oneP} set={setDetails}/>}
     <div className="allposts">
-      {props.data.map((el, i) => (
-        <Post data={el} users={users} handle={handleDetails}/>
+      {data.map((el, i) => (
+        <Post data={el}  handle={handleDetails}/>
       ))}
     </div></div>
   );
